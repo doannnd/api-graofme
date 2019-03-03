@@ -10,7 +10,7 @@ const userRoute = require(__dirname + '/api/routes/user.route');
 const app = express();
 const port = process.env.PORT;
 
-mongoose.connect(process.env.MONGOOSE_URI, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGOOSE_URI, {useNewUrlParser: true, useCreateIndex: true});
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.urlencoded({extended: false}));
